@@ -6,6 +6,10 @@
  * هذا الملف يحتوي على 23 وكيل ذكي يشغلون التحليل المالي
  */
 
+// Import additional agents
+import { additionalAgents } from './additional-agents';
+import { marketAgents } from './market-agents';
+
 export interface FinancialData {
   [key: string]: number | string | undefined;
   revenue?: number;
@@ -281,10 +285,6 @@ export const roeAgent: Agent = {
     };
   }
 };
-
-// Import additional agents
-import { additionalAgents } from './additional-agents';
-import { marketAgents } from './market-agents';
 
 // Export all agents
 export const agents: Agent[] = [

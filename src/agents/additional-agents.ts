@@ -342,5 +342,4 @@ export const additionalAgents: Agent[] = [
   workingCapitalAgent
 ];
 
-// Agent 13-23 will be added in the next module
-export * from './market-agents';
+// Agent 13-23 are defined in market-agents.ts
