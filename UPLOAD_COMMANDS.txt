@@ -1,0 +1,29 @@
+# أوامر رفع المشروع إلى GitHub
+
+# 1. أولاً، أنشئ مستودع GitHub جديد:
+# اذهب إلى: https://github.com/new
+# اسم المستودع: finclick-ai-platform
+# الوصف: منصة التحليل المالي الذكية مع 180+ تحليل و 23 وكيل ذكاء اصطناعي
+# اختر Public
+# لا تحدد Initialize with README
+# اضغط "Create repository"
+
+# 2. بعد إنشاء المستودع، نفذ هذه الأوامر:
+
+cd "/Users/razantaofek/Desktop/FinClick.AI Platform by Claude Code/frontend"
+
+git push -u origin main
+
+# 3. إذا طلب منك تسجيل الدخول:
+# أدخل username: razantaofek
+# أدخل password: (GitHub Personal Access Token)
+
+# 4. بعد نجاح الرفع، ستجد المستودع على:
+# https://github.com/razantaofek/finclick-ai-platform
+
+# 5. للنشر على Vercel:
+# اذهب إلى: https://vercel.com
+# اضغط "New Project"
+# اختر "Import Git Repository"
+# اختر مستودع finclick-ai-platform
+# اضغط "Deploy"
