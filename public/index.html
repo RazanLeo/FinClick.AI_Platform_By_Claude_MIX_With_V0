@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#B48500" />
+    <meta name="description" content="FinClick.AI - منصة التحليل المالي الذكية بالذكاء الاصطناعي. 180 تحليل مالي، 23 وكيل ذكي، تقارير احترافية." />
+    <meta name="keywords" content="تحليل مالي، ذكاء اصطناعي، SaaS، المملكة العربية السعودية، fintech، financial analysis" />
+    <meta name="author" content="FinClick.AI Team" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://finclick-ai-platform.vercel.app/" />
+    <meta property="og:title" content="FinClick.AI - منصة التحليل المالي الذكية" />
+    <meta property="og:description" content="180 تحليل مالي، 23 وكيل ذكاء اصطناعي، تقارير احترافية" />
+    <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://finclick-ai-platform.vercel.app/" />
+    <meta property="twitter:title" content="FinClick.AI - منصة التحليل المالي الذكية" />
+    <meta property="twitter:description" content="180 تحليل مالي، 23 وكيل ذكاء اصطناعي، تقارير احترافية" />
+    <meta property="twitter:image" content="%PUBLIC_URL%/logo512.png" />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Google Fonts for Arabic Support -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>FinClick.AI - منصة التحليل المالي الذكية</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Noto Sans Arabic', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #000000;
+        color: #B48500;
+        direction: rtl;
+      }
+
+      code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+      }
+
+      /* Loading screen */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+
+      .loading-logo {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(45deg, #B48500, #FFD700);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 20px;
+        animation: pulse 2s infinite;
+      }
+
+      .loading-text {
+        color: #B48500;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .loading-subtext {
+        color: #888;
+        font-size: 16px;
+        text-align: center;
+        max-width: 400px;
+        line-height: 1.5;
+      }
+
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #333;
+        border-top: 4px solid #B48500;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-top: 20px;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      /* Hide loading screen when React loads */
+      .app-loaded .loading-screen {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="text-align: center; padding: 50px; background: #000; color: #B48500;">
+        <h1>FinClick.AI</h1>
+        <p>يحتاج هذا التطبيق إلى JavaScript ليعمل بشكل صحيح.</p>
+        <p>This application requires JavaScript to run properly.</p>
+      </div>
+    </noscript>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-logo">Fi</div>
+      <div class="loading-text">FinClick.AI</div>
+      <div class="loading-subtext">
+        منصة التحليل المالي الذكية<br>
+        جاري التحميل...
+      </div>
+      <div class="loading-spinner"></div>
+    </div>
+
+    <div id="root"></div>
+
+    <script>
+      // Hide loading screen when app loads
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            loadingScreen.style.transition = 'opacity 0.5s ease-out';
+            setTimeout(function() {
+              loadingScreen.style.display = 'none';
+            }, 500);
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
