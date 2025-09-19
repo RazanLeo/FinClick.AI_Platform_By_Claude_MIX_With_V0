@@ -1,16 +1,13 @@
 {
-  "buildCommand": "npm install --legacy-peer-deps && NODE_OPTIONS=--openssl-legacy-provider npm run build",
+  "buildCommand": "npm ci --legacy-peer-deps && GENERATE_SOURCEMAP=false NODE_OPTIONS=--openssl-legacy-provider npm run build",
   "outputDirectory": "build",
   "framework": "create-react-app",
-  "installCommand": "npm install --legacy-peer-deps",
+  "installCommand": "npm ci --legacy-peer-deps",
   "env": {
     "NODE_OPTIONS": "--openssl-legacy-provider",
-    "GENERATE_SOURCEMAP": "false"
-  },
-  "functions": {
-    "app/api/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
+    "GENERATE_SOURCEMAP": "false",
+    "CI": "false",
+    "DISABLE_ESLINT_PLUGIN": "true"
   },
   "rewrites": [
     {
