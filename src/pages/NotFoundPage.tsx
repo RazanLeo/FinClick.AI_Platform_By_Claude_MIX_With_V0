@@ -5,7 +5,6 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Home, ArrowLeft, Search, HelpCircle } from 'lucide-react';
 
 const NotFoundPage: React.FC = () => {
   return (
@@ -44,7 +43,7 @@ const NotFoundPage: React.FC = () => {
             to="/"
             className="flex items-center px-6 py-3 bg-gradient-to-r from-amber-500 to-yellow-500 text-black rounded-lg font-semibold hover:from-yellow-500 hover:to-amber-500 transition-all transform hover:scale-105"
           >
-            <Home className="w-5 h-5 ml-2" />
+            <span className="text-xl ml-2">🏠</span>
             العودة للرئيسية
           </Link>
 
@@ -52,7 +51,7 @@ const NotFoundPage: React.FC = () => {
             to="/dashboard"
             className="flex items-center px-6 py-3 border border-amber-500 text-amber-500 rounded-lg font-semibold hover:bg-amber-500 hover:text-black transition-all"
           >
-            <ArrowLeft className="w-5 h-5 ml-2" />
+            <span className="text-xl ml-2">⬅</span>
             لوحة المعلومات
           </Link>
         </div>
@@ -63,7 +62,7 @@ const NotFoundPage: React.FC = () => {
             to="/analysis"
             className="p-6 bg-black/50 border border-amber-500/30 rounded-xl hover:border-amber-500/50 transition-all group"
           >
-            <Search className="w-8 h-8 text-amber-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+            <span className="text-3xl text-amber-500 mx-auto mb-3 group-hover:scale-110 transition-transform block">🔍</span>
             <h3 className="font-semibold text-amber-500 mb-2">التحليل المالي</h3>
             <p className="text-gray-400 text-sm">ابدأ تحليل مالي جديد</p>
           </Link>
@@ -85,7 +84,7 @@ const NotFoundPage: React.FC = () => {
             to="/help"
             className="p-6 bg-black/50 border border-amber-500/30 rounded-xl hover:border-amber-500/50 transition-all group"
           >
-            <HelpCircle className="w-8 h-8 text-amber-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+            <span className="text-3xl text-amber-500 mx-auto mb-3 group-hover:scale-110 transition-transform block">❓</span>
             <h3 className="font-semibold text-amber-500 mb-2">المساعدة</h3>
             <p className="text-gray-400 text-sm">احصل على الدعم</p>
           </Link>
