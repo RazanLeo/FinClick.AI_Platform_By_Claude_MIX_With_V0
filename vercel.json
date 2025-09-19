@@ -1,8 +1,11 @@
 {
-  "buildCommand": "npm install --legacy-peer-deps && npm run build",
+  "buildCommand": "NODE_OPTIONS=--openssl-legacy-provider npm install --legacy-peer-deps && NODE_OPTIONS=--openssl-legacy-provider npm run build",
   "outputDirectory": "build",
   "framework": "create-react-app",
   "installCommand": "npm install --legacy-peer-deps",
+  "env": {
+    "NODE_OPTIONS": "--openssl-legacy-provider"
+  },
   "rewrites": [
     {
       "source": "/(.*)",
