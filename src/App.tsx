@@ -6,13 +6,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import AuthPage from './pages/AuthPage';
+import DashboardPageV2 from './pages/DashboardPageV2';
+import ReportsPage from './pages/ReportsPage';
 import LoginPage from './pages/auth/LoginPage';
 import RegisterPage from './pages/auth/RegisterPage';
 import DashboardPage from './pages/dashboard/DashboardPage';
 import AnalysisPage from './pages/analysis/AnalysisPage';
 import LiquidityAnalysisPage from './pages/analysis/LiquidityAnalysisPage';
 import SubscriptionPage from './pages/subscription/SubscriptionPage';
-import ReportsPage from './pages/reports/ReportsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
@@ -21,13 +23,17 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/auth" element={<AuthPage />} />
+          <Route path="/login" element={<AuthPage />} />
+          <Route path="/register" element={<AuthPage />} />
+          <Route path="/dashboard" element={<DashboardPageV2 />} />
+          <Route path="/reports" element={<ReportsPage />} />
+
+          {/* Legacy routes for backward compatibility */}
+          <Route path="/dashboard-old" element={<DashboardPage />} />
           <Route path="/analysis" element={<AnalysisPage />} />
           <Route path="/analysis/liquidity" element={<LiquidityAnalysisPage />} />
           <Route path="/subscription" element={<SubscriptionPage />} />
-          <Route path="/reports" element={<ReportsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
